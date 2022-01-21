@@ -1,19 +1,54 @@
 {
   "name": "carcare",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Car cleaning management to the next level",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mycomputer001/carcare.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "carcare",
+    "cleaning",
+    "car",
+    "motorcycle"
+  ],
+  "engines": {
+    "node": ">=14",
+    "npm": ">=7"
+  },
+  "engineStrict": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:backend": "cd packages/backend && npm run watch",
+    "dev:frontend": "cd packages/frontend && npm run dev",
+    "build:backend": "cd packages/backend && npm run build",
+    "build:frontend": "cd packages/frontend && npm run build"
+  },
   "bugs": {
     "url": "https://github.com/mycomputer001/carcare/issues"
   },
-  "homepage": "https://github.com/mycomputer001/carcare#readme"
+  "author": "Watchara Jangam",
+  "license": "MIT",
+  "homepage": "https://github.com/mycomputer001/carcare#readme",
+  "devDependencies": {
+    "@types/node": "^16.7.10",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "@vue/eslint-config-standard": "^6.1.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-with-typescript": "^20.0.0",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unused-imports": "^1.1.4",
+    "eslint-plugin-vue": "^7.16.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.3.5"
+  }
 }

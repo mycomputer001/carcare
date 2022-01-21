@@ -1,0 +1,31 @@
+{
+  "name": "@carcare/backend",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "node dist/backend/src/server.js",
+    "build": "tsc -p ./tsconfig.build.json",
+    "kill-port": "npx kill-port 4000",
+    "watch": "nodemon",
+    "serve:ts-node": "ts-node src/server.ts",
+    "watch:ts": "tsc src/server.ts -w",
+    "clean": "npx rimraf dist && npx rimraf node_modules",
+    "fix": "eslint **/*.ts --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv-flow": "^3.2.0",
+    "fastify": "^3.27.0",
+    "fastify-cors": "^6.0.2",
+    "fastify-helmet": "^7.0.0",
+    "fastify-postgres": "^3.6.0",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "@types/dotenv-flow": "^3.2.0",
+    "@types/pg": "^8.6.4",
+    "pino": "^7.6.4",
+    "pino-pretty": "^7.5.0"
+  }
+}

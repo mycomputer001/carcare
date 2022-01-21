@@ -1,0 +1,13 @@
+node_modules/
+dist/
+
+.DS_Store
+dist
+dist-ssr
+
+.env.local
+.env.test
+.env.*.local
+
+coverage
+.nyc_output
