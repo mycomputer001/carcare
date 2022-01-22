@@ -86,7 +86,7 @@ module.exports = {
             multiline: { max: 2 }
           }
         ],
-        'vue/component-definition-name-casing': ['error', 'kebab-case'],
+        'vue/component-definition-name-casing': ['error', 'kebab-case' | 'PascalCase'],
         'vue/html-indent': ['error']
       }
     }
