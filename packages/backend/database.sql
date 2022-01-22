@@ -1,4 +1,4 @@
-drop table users,register cascade;
+drop table users,register,reserve cascade;
 
 create table users(
   user_id text not null unique,
@@ -15,4 +15,15 @@ create table register(
   customer_phone text not null,
   customer_email text not null unique,
   primary key (customer_id)
+);
+
+create table reserve(
+  reserve_id serial,
+  reserve_brand text not null,
+  reserve_model text not null,
+  reserve_license text not null,
+  reserve_phone text not null,
+  reserve_service text not null,
+  reserve_date text not null,
+  primary key (reserve_id)
 )
