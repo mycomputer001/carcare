@@ -19,6 +19,7 @@ module.exports = {
   ],
   rules: {
     'no-void': ['error', { allowAsStatement: true }],
+    'quotes': ['error', 'single'],
     'quote-props': ['error', 'consistent'],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -86,7 +87,7 @@ module.exports = {
             multiline: { max: 2 }
           }
         ],
-        'vue/component-definition-name-casing': ['error', 'kebab-case' | 'PascalCase'],
+        'vue/component-definition-name-casing': ['error', 'kebab-case'],
         'vue/html-indent': ['error']
       }
     }

@@ -14,8 +14,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
 import ky from 'ky'
+import { defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 export default defineComponent({
@@ -36,10 +36,10 @@ export default defineComponent({
         }).json()
 
         alert(response)
-
         router.push('/firstpage')
       } catch (error) {
-        alert(error)
+        const json = await error.response.json()
+        alert(json.message)
       }
     }
 
