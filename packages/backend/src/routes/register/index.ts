@@ -15,8 +15,8 @@ export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promi
 
     try {
       await instance.pg.query(
-        'insert into register (customer_name, customer_surname, phone, email, customer_password) values ($1, $2, $3, $4, $5)',
-        [request.body.firstName, request.body.lastName, request.body.telephoneNumber, request.body.email, request.body.password]
+        'insert into register (customer_username, customer_name, customer_surname, phone, email, customer_password) values ($1, $2, $3, $4, $5, $6)',
+        [request.body.username, request.body.firstName, request.body.lastName, request.body.telephoneNumber, request.body.email, request.body.password]
       )
     } catch (error) {
       throw new Error(error as string)

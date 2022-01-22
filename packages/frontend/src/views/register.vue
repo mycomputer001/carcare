@@ -50,7 +50,7 @@ export default defineComponent({
         }).json()
 
         console.log(response)
-        router.push('/')
+        router.push('/firstpage')
       } catch (error) {
         console.error(error)
       }

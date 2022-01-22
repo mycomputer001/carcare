@@ -7,11 +7,12 @@ create table users(
 );
 
 create table register(
-  customer_id SERIAL,
+  customer_id serial,
+  customer_username text not null unique,
+  customer_password text not null,
   customer_name text not null,
   customer_surname text not null,
   phone text not null,
   email text not null unique,
-  customer_password text not null,
   primary key (customer_id)
 )
