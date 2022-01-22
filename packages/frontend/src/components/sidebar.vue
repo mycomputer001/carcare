@@ -1,24 +1,56 @@
 <template>
-<div class="sidebar">
-  <div class="h-[70%] flex flex-col justify-between items-center mt-4">
-    <div>
-      <v-mdi name="mdi-account-circle" size="125" fill="#c3c3c3"></v-mdi>
-      <div class="text-white">Aekkepang Jantola</div>
-    </div>
-    <div class="menu-grid">
-      <router-link to="/firstpage"><v-mdi name="mdi-home-variant" size="40" fill="#c3c3c3"></v-mdi></router-link>
-      <router-link to="/firstpage"><div class="text-white hover:text-orange-400">กลับหน้าหลัก</div></router-link>
-      <router-link to="/profile"><v-mdi name="mdi-account-cog" size="40" fill="#c3c3c3"></v-mdi></router-link>
-      <router-link to="/profile"><div class="text-white hover:text-orange-400">ข้อมูลบัญชี</div></router-link>
-      <router-link to="/status"><v-mdi name="mdi-car-wash" size="40" fill="#c3c3c3"></v-mdi></router-link>
-      <router-link to="/status"><div class="text-white hover:text-orange-400">ตรวจสอบสถานะ</div></router-link>
-      <router-link to="/contact"><v-mdi name="mdi-bell-ring" size="40" fill="#c3c3c3"></v-mdi></router-link>
-      <router-link to="/contact"><div class="text-white hover:text-orange-400">ติดต่อเรา</div></router-link>
-      <router-link to="/login"><v-mdi name="mdi-door-open" size="40" fill="#c3c3c3"></v-mdi></router-link>
-      <router-link to="/login"><div class="text-white hover:text-orange-400">ออกจากระบบ</div></router-link>
+  <div class="sidebar">
+    <div class="h-[70%] flex flex-col justify-start gap-20 items-center mt-4">
+      <div>
+        <v-mdi name="mdi-account-circle" size="125" fill="#c3c3c3" />
+        <div class="text-white">
+          Aekkepang Jantola
+        </div>
+      </div>
+      <div class="menu-grid">
+        <router-link to="/firstpage">
+          <v-mdi name="mdi-home-variant" size="40" fill="#c3c3c3" />
+        </router-link>
+        <router-link to="/firstpage">
+          <div class="text-white hover:text-orange-400">
+            กลับหน้าหลัก
+          </div>
+        </router-link>
+        <router-link to="/profile">
+          <v-mdi name="mdi-account-cog" size="40" fill="#c3c3c3" />
+        </router-link>
+        <router-link to="/profile">
+          <div class="text-white hover:text-orange-400">
+            ข้อมูลบัญชี
+          </div>
+        </router-link>
+        <router-link to="/status">
+          <v-mdi name="mdi-car-wash" size="40" fill="#c3c3c3" />
+        </router-link>
+        <router-link to="/status">
+          <div class="text-white hover:text-orange-400">
+            ตรวจสอบสถานะ
+          </div>
+        </router-link>
+        <router-link to="/contact">
+          <v-mdi name="mdi-bell-ring" size="40" fill="#c3c3c3" />
+        </router-link>
+        <router-link to="/contact">
+          <div class="text-white hover:text-orange-400">
+            ติดต่อเรา
+          </div>
+        </router-link>
+        <router-link to="/login">
+          <v-mdi name="mdi-door-open" size="40" fill="#c3c3c3" />
+        </router-link>
+        <router-link to="/login">
+          <div class="text-white hover:text-orange-400">
+            ออกจากระบบ
+          </div>
+        </router-link>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script lang="ts">

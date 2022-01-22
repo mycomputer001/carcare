@@ -35,9 +35,10 @@ export default defineComponent({
           }
         }).json()
 
-        alert(response)
+        console.log(response)
         router.push('/firstpage')
       } catch (error) {
+        // @ts-expect-error error is unknown
         const json = await error.response.json()
         alert(json.message)
       }

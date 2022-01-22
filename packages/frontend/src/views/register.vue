@@ -1,7 +1,9 @@
 <template>
   <div class="min-h-screen w-full">
     <div class="grid grid-cols-2 gap-3 text-center text-1xl grow mt-10">
-      <div class="col-span-2 mb-2 text-4xl">สมัครสมาชิก</div>
+      <div class="col-span-2 mb-2 text-4xl">
+        สมัครสมาชิก
+      </div>
       <p>Username :</p>
       <input type="Username" placeholder="Username" class="rounded ring-black ring-2 w-60" v-model="username">
       <p>Password :</p>
@@ -14,14 +16,16 @@
       <input type="email" placeholder="Email" class="rounded ring-black ring-2 w-60" v-model="email">
       <p>เบอร์โทร :</p>
       <input type="tel" placeholder="เบอร์โทร" class="rounded ring-black ring-2 w-60" v-model="telephoneNumber">
-      <button class="hover:bg-orange-600 col-span-2 mx-auto h-min w-max px-2 bg-main rounded font-bold text-2xl mt-4" @click="registerUser">สมัครสมาชิก</button>
+      <button class="hover:bg-orange-600 col-span-2 mx-auto h-min w-max px-2 bg-main rounded font-bold text-2xl mt-4" @click="registerUser">
+        สมัครสมาชิก
+      </button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
 import ky from 'ky'
+import { defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 export default defineComponent({
@@ -52,7 +56,9 @@ export default defineComponent({
         console.log(response)
         router.push('/firstpage')
       } catch (error) {
-        console.error(error)
+        // @ts-expect-error error is unknown
+        const json = await error.response.json()
+        alert(json.message)
       }
     }
 
