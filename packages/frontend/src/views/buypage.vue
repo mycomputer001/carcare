@@ -40,6 +40,10 @@
           วัน
         </div>
         <input type="date" class="ring-black ring-2 w-1/2 rounded" v-model="date">
+        <div class="">
+          เวลา
+        </div>
+        <input type="time" class="ring-black ring-2 w-1/2 rounded" v-model="date">
         <div class="w-full justify-end">
           <button class="rounded w-min px-2 hover:bg-orange-600 bg-main inline-block" @click="reserveUser">
             ยืนยัน

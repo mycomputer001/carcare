@@ -6,13 +6,13 @@
         <img src="@/assets/car1.png" width="300" height="auto" alt="logo" class="mx-auto rounded-full">
         <img src="@/assets/car2.png" width="300" height="auto" alt="logo" class="mx-auto rounded-full">
         <div class="">
-          รักเอก
+          รถยนต์
         </div>
         <div class="">
           จักรยานยนต์
         </div>
         <router-link to="/buypage" class="hover:bg-orange-600 bg-main w-max px-10 mx-auto font-mono rounded-full">
-          ราคา 3000
+          ราคา 300
         </router-link>
         <router-link to="/buypage" class="hover:bg-orange-600 bg-main w-max px-10 mx-auto font-mono rounded-full">
           ราคา 200
