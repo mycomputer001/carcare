@@ -6,7 +6,7 @@
         <img src="@/assets/car1.png" width="300" height="auto" alt="logo" class="mx-auto rounded-full">
         <img src="@/assets/car2.png" width="300" height="auto" alt="logo" class="mx-auto rounded-full">
         <div class="">
-          รักเอก
+          รถยนต์
         </div>
         <div class="">
           จักรยานยนต์
