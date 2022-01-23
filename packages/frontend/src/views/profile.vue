@@ -12,11 +12,6 @@
       <p>นามสกุล :</p><input type="lastname" placeholder="นามสกุล" value="Jantola" class="rounded ring-black ring-2 w-60">
       <p>Email :</p><input type="email" placeholder="Email" value="aek6969@gmail.com" class="rounded ring-black ring-2 w-60">
       <p>เบอร์โทร :</p><input type="tel" placeholder="เบอร์โทร" value="0969869693" class="rounded ring-black ring-2 w-60">
-      <p>ที่อยู่ :</p><textarea
-        placeholder="ที่อยู่" value="อยู่ในม.มองไม่เห็น"
-        name="address" id="address"
-        rows="5"
-        class="rounded ring-black ring-2 w-60" />
       <router-link to="/profile" class="col-span-2 mx-auto h-min w-max px-2 bg-main rounded font-bold text-2xl mt-4 hover:bg-orange-600">
         แก้ไขข้อมูล
       </router-link>
