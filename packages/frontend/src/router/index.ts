@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 import * as Page from '@/views'
 
-const routes: RouteRecordRaw[] = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
@@ -52,6 +52,16 @@ const routes: RouteRecordRaw[] = [
     path: '/bill',
     name: 'bill',
     component: Page.Bill
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: Page.Admin
+  },
+  {
+    path: '/employee',
+    name: 'employee',
+    component: Page.Employee
   }
 ]
 

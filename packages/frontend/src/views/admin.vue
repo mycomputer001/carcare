@@ -1,14 +1,17 @@
 <template>
-  <sidebar />
+  <sidebarceo />
+  <div class="min-h-screen w-full">
+    asd
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import Sidebar from '../components/sidebar.vue'
+import Sidebarceo from '../components/sidebarceo.vue'
 
 export default defineComponent({
-  name: '',
-  components: { Sidebar }
+  name: 'admin',
+  components: { Sidebarceo }
 })
 </script>
