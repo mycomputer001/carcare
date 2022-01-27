@@ -1,13 +1,6 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify'
 
-interface RegisterBody {
-  username: string
-  firstName: string
-  lastName: string
-  email: string
-  password: string
-  telephoneNumber: string
-}
+import { RegisterBody } from '@carcare/common'
 
 export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promise<void> => {
   instance.post<{ Body: RegisterBody }>('/', async (request) => {

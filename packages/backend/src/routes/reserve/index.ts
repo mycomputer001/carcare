@@ -1,14 +1,6 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify'
 
-interface ReserveBody {
-  brand: string
-  model: string
-  license: string
-  phone: string
-  service: string
-  date: string
-
-}
+import { ReserveBody } from '@carcare/common'
 
 export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promise<void> => {
   instance.post<{ Body: ReserveBody }>('/', async (request) => {

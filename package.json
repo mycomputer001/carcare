@@ -22,8 +22,10 @@
   ],
   "scripts": {
     "dev:backend": "cd packages/backend && npm run watch",
+    "dev:common": "cd packages/common && npm run dev",
     "dev:frontend": "cd packages/frontend && npm run dev",
     "build:backend": "cd packages/backend && npm run build",
+    "build:common": "cd packages/common && npm run build",
     "build:frontend": "cd packages/frontend && npm run build"
   },
   "bugs": {

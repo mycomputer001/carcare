@@ -1,0 +1,15 @@
+{
+  "name": "@carcare/common",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.build.json",
+    "dev": "tsc -w",
+    "clean": "npx rimraf dist && npx rimraf node_modules",
+    "fix": "eslint **/*.ts --fix"
+  },
+  "author": "Watchara Jangam",
+  "license": "ISC"
+}

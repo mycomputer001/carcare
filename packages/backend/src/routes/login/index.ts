@@ -1,9 +1,6 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify'
 
-interface LoginBody {
-  username: string
-  password: string
-}
+import { LoginBody } from '@carcare/common'
 
 export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promise<void> => {
   instance.post<{ Body: LoginBody }>('/', async (request) => {

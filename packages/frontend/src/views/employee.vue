@@ -8,9 +8,9 @@
         </div>
         <div class="flex justify-center gap-5">
           <input type="text" placeholder="ชื่อพนักงาน" class="ring-black ring-2 w-28 rounded ml-3" v-model="name">
-          <input type="text" placeholder="นาสกุล" class="ring-black ring-2 w-28 rounded ml-3" v-model="surename">
-          <input type="text" placeholder="เบอร์โทรศัพท์" class="ring-black ring-2 w-28 rounded ml-3" v-model="phone">
-          <input type="text" placeholder="อายุ" class="ring-black ring-2 w-28 rounded ml-3" v-model="age">
+          <input type="text" placeholder="นามสกุล" class="ring-black ring-2 w-28 rounded ml-3" v-model="surName">
+          <input type="text" placeholder="เบอร์โทรศัพท์" class="ring-black ring-2 w-28 rounded ml-3" v-model="phoneNumber">
+          <input type="text" placeholder="อายุ" class="ring-black ring-2 w-28 rounded ml-3" v-model="birthdate">
           <input type="text" placeholder="เงินเดือน" class="ring-black ring-2 w-28 rounded ml-3" v-model="salary">
         </div>
         <div class="flex justify-center">
@@ -40,9 +40,9 @@ export default defineComponent({
     const router = useRouter()
 
     const name = ref('')
-    const surename = ref('')
-    const phone = ref('')
-    const age = ref('')
+    const surName = ref('')
+    const phoneNumber = ref('')
+    const birthdate = ref('')
     const salary = ref('')
     const address = ref('')
 
@@ -51,9 +51,9 @@ export default defineComponent({
         const response = await ky.post('http://localhost:4000/employee', {
           json: {
             name: name.value,
-            surename: surename.value,
-            phone: phone.value,
-            age: age.value,
+            surName: surName.value,
+            phoneNumber: phoneNumber.value,
+            birthdate: birthdate.value,
             salary: salary.value,
             address: address.value
           }
@@ -70,9 +70,9 @@ export default defineComponent({
 
     return {
       name,
-      surename,
-      phone,
-      age,
+      surName,
+      phoneNumber,
+      birthdate,
       salary,
       address,
       employeeUser
