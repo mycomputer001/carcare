@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 // @ts-expect-error
 import VueMdi from 'vue-mdijs'
+import VueApexCharts from 'vue3-apexcharts'
 
 import * as mdi from '@mdi/js'
 
@@ -9,5 +10,10 @@ import Router from './router'
 
 import './globals.css'
 
+const app = createApp(App)
+
 VueMdi.add(mdi)
-createApp(App).use(Router).use(VueMdi).mount('#app')
+app.use(VueApexCharts)
+app.use(Router)
+app.use(VueMdi)
+app.mount('#app')

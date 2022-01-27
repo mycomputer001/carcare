@@ -8,15 +8,15 @@
         </div>
       </div>
       <div class="menu-grid">
-        <router-link to="/firstpage">
+        <router-link to="/admin">
           <v-mdi name="mdi-car" size="40" fill="#c3c3c3" />
         </router-link>
-        <router-link to="/firstpage">
+        <router-link to="/admin">
           <div class="text-white hover:text-orange-400">
             สถานะรถ
           </div>
         </router-link>
-        <router-link to="/profile">
+        <router-link to="/employee">
           <v-mdi name="mdi-account-cog" size="40" fill="#c3c3c3" />
         </router-link>
         <router-link to="/employee">
@@ -24,18 +24,18 @@
             ข้อมูลพนักงาน
           </div>
         </router-link>
-        <router-link to="/status">
+        <router-link to="/chartview">
           <v-mdi name="mdi-chart-areaspline" size="40" fill="#c3c3c3" />
         </router-link>
-        <router-link to="/status">
+        <router-link to="/chartview">
           <div class="text-white hover:text-orange-400">
             สถิติ
           </div>
         </router-link>
-        <router-link to="/contact">
+        <router-link to="/rateview">
           <v-mdi name="mdi-star-shooting-outline" size="40" fill="#c3c3c3" />
         </router-link>
-        <router-link to="/contact">
+        <router-link to="/rateview">
           <div class="text-white hover:text-orange-400">
             รีวิวพนักงาน
           </div>

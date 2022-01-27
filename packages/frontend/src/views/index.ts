@@ -1,6 +1,7 @@
 import Admin from './admin.vue'
 import Bill from './bill.vue'
 import Buypage from './buypage.vue'
+import Chartview from './chartview.vue'
 import Contact from './contact.vue'
 import Employee from './employee.vue'
 import Firstpage from './firstpage.vue'
@@ -8,6 +9,7 @@ import Home from './home.vue'
 import Login from './login.vue'
 import Profile from './profile.vue'
 import Rate from './rate.vue'
+import Rateview from './rateview.vue'
 import Register from './register.vue'
 import Status from './status.vue'
 
@@ -15,6 +17,7 @@ export {
   Admin,
   Bill,
   Buypage,
+  Chartview,
   Contact,
   Employee,
   Firstpage,
@@ -22,6 +25,7 @@ export {
   Login,
   Profile,
   Rate,
+  Rateview,
   Register,
   Status
 }

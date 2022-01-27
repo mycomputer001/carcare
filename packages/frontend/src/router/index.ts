@@ -62,6 +62,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/employee',
     name: 'employee',
     component: Page.Employee
+  },
+  {
+    path: '/chartview',
+    name: 'chartview',
+    component: Page.Chartview
+  },
+  {
+    path: '/rateview',
+    name: 'rateview',
+    component: Page.Rateview
   }
 ]
 
