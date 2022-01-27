@@ -1,4 +1,4 @@
-drop table customers, reserves, employee cascade;
+drop table customers, reserves, employees cascade;
 
 create table customers (
   customer_id serial,

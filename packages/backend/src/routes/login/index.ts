@@ -5,7 +5,7 @@ import { LoginBody } from '@carcare/common'
 export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promise<void> => {
   instance.post<{ Body: LoginBody }>('/', async (request) => {
     const users = await instance.pg.query(
-      'select (customer_username, customer_password) from register where customer_username = $1 and customer_password = $2',
+      'select (customer_username, customer_password) from customers where customer_username = $1 and customer_password = $2',
       [request.body.username, request.body.password]
     ).catch(error => {
       throw new Error(error as string)

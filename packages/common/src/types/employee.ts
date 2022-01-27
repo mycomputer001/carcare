@@ -3,6 +3,6 @@ export interface EmployeeBody {
   surname: string
   phoneNumber: string
   birthdate: string
-  salary: string
+  salary: number
   address: string
 }

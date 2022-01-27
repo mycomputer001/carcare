@@ -1,16 +1,16 @@
 <template>
   <sidebarceo />
   <div class="min-h-screen w-full">
-    <div class="flex justify-center">
+    <div class="flex flex-col items-center">
       <div class="ring-black ring-2 rounded-lg w-min mt-5 p-3">
         <div class="flex justify-center">
           เพิ่มพนักงาน
         </div>
         <div class="flex justify-center gap-5">
           <input type="text" placeholder="ชื่อพนักงาน" class="ring-black ring-2 w-28 rounded ml-3" v-model="name">
-          <input type="text" placeholder="นามสกุล" class="ring-black ring-2 w-28 rounded ml-3" v-model="surName">
+          <input type="text" placeholder="นามสกุล" class="ring-black ring-2 w-28 rounded ml-3" v-model="surname">
           <input type="text" placeholder="เบอร์โทรศัพท์" class="ring-black ring-2 w-28 rounded ml-3" v-model="phoneNumber">
-          <input type="text" placeholder="อายุ" class="ring-black ring-2 w-28 rounded ml-3" v-model="birthdate">
+          <input type="date" placeholder="อายุ" class="ring-black ring-2 w-36 rounded ml-3" v-model="birthdate">
           <input type="text" placeholder="เงินเดือน" class="ring-black ring-2 w-28 rounded ml-3" v-model="salary">
         </div>
         <div class="flex justify-center">
@@ -22,16 +22,48 @@
           </button>
         </div>
       </div>
+      <div class="text-2xl flex flex-col items-center mt-4">
+        <div class="grid grid-cols-5 text-center border-2">
+          <div>ชื่อ</div>
+          <div>นามสกุล</div>
+          <div>เบอร์โทรศัพท์</div>
+          <div>วันเกิด</div>
+          <div>เงินเดือน</div>
+          <template v-for="employee of employeesList" :key="employee.employee_id">
+            <div class="">
+              {{ employee.employee_name }}
+            </div>
+            <div class="">
+              {{ employee.employee_surname }}
+            </div>
+            <div class="">
+              {{ employee.employee_phone_number }}
+            </div>
+            <div class="">
+              {{ employee.employee_birthdate }}
+            </div>
+            <div class="">
+              {{ employee.employee_salary }}
+            </div>
+          </template>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
+
+import dayjs from 'dayjs'
 import ky from 'ky'
-import { defineComponent, ref } from 'vue'
+import { defineComponent, onMounted, Ref, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+import { EmployeeBody, employees } from '@carcare/common'
+
 import Sidebarceo from '../components/sidebarceo.vue'
+
+import 'dayjs/locale/th'
 
 export default defineComponent({
   name: 'employee',
@@ -40,27 +72,36 @@ export default defineComponent({
     const router = useRouter()
 
     const name = ref('')
-    const surName = ref('')
+    const surname = ref('')
     const phoneNumber = ref('')
     const birthdate = ref('')
     const salary = ref('')
     const address = ref('')
+    const employeesList: Ref<Array<employees>> = ref([])
 
     const employeeUser = async (): Promise<void> => {
-      try {
-        const response = await ky.post('http://localhost:4000/employee', {
-          json: {
-            name: name.value,
-            surName: surName.value,
-            phoneNumber: phoneNumber.value,
-            birthdate: birthdate.value,
-            salary: salary.value,
-            address: address.value
-          }
-        }).json()
+      if (salary.value === '' || Number(salary.value) <= 0) {
+        alert('เงินเดือนมีความผิดพลาด')
+        return
+      }
 
-        console.log(response)
+      try {
+        const employeeData: EmployeeBody = {
+          name: name.value,
+          surname: surname.value,
+          phoneNumber: phoneNumber.value,
+          birthdate: birthdate.value,
+          // ถ้าข้างหน้าเป็น 0, '', {}, [], null, undefined, NaN เอาข้างหลัง
+          salary: Number(salary.value),
+          address: address.value
+        }
+
+        await ky.post('http://localhost:4000/employees', {
+          json: employeeData
+        })
+
         router.go(0)
+        alert('post employee done')
       } catch (error) {
         // @ts-expect-error error is unknown
         const json = await error.response.json()
@@ -68,14 +109,32 @@ export default defineComponent({
       }
     }
 
+    onMounted(async () => {
+      const employees = await ky.get('http://localhost:4000/employees').json<Array<employees>>()
+      employeesList.value = [...employeesList.value, ...employees].map(employee => {
+        const ret: employees = {
+          employee_id: employee.employee_id,
+          employee_name: employee.employee_name,
+          employee_surname: employee.employee_surname,
+          employee_phone_number: employee.employee_phone_number,
+          employee_birthdate: dayjs(employee.employee_birthdate).locale('th').format('D MMMM YYYY'),
+          employee_salary: employee.employee_salary,
+          employee_address: employee.employee_address
+        }
+
+        return ret
+      })
+    })
+
     return {
       name,
-      surName,
+      surname,
       phoneNumber,
       birthdate,
       salary,
       address,
-      employeeUser
+      employeeUser,
+      employeesList
     }
   }
 })
