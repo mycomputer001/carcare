@@ -7,7 +7,14 @@
 <script lang="ts">
 
 import { ApexOptions } from 'apexcharts'
+import dayjs from 'dayjs'
+import localeData from 'dayjs/plugin/localeData'
 import { defineComponent, Ref, ref } from 'vue'
+
+import 'dayjs/locale/th'
+
+dayjs.extend(localeData)
+dayjs.locale('th')
 
 export default defineComponent({
   name: 'chart',
@@ -17,14 +24,14 @@ export default defineComponent({
         id: 'vuechart-example'
       },
       xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+        categories: dayjs.months()
       }
     })
 
     const series = ref([
       {
-        name: 'series-1',
-        data: [30, 40, 45, 50, 49, 60, 70, 91]
+        name: 'จำนวนรถ',
+        data: Array.from<number, number>({ length: 12 }, () => Math.floor(Math.random() * 30))
       }
     ])
 

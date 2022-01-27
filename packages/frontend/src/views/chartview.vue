@@ -1,7 +1,12 @@
 <template>
   <sidebarceo />
   <div class="min-h-screen w-full">
-    <chart />
+    <div class="flex justify-center text-3xl mt-5">
+      สถิติการล้างรถต่อเดือน
+    </div>
+    <div class="flex justify-center">
+      <chart />
+    </div>
   </div>
 </template>
 
