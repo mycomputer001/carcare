@@ -75,7 +75,7 @@ export default defineComponent({
 
     const reserveUser = async (): Promise<void> => {
       try {
-        const response = await ky.post('http://localhost:4000/reserve', {
+        const response = await ky.post('http://localhost:4000/reserves', {
           json: {
             brand: brand.value,
             model: model.value,

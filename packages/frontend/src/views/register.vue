@@ -16,7 +16,7 @@
       <input type="email" placeholder="Email" class="rounded ring-black ring-2 w-60" v-model="email">
       <p>เบอร์โทร :</p>
       <input type="tel" placeholder="เบอร์โทร" class="rounded ring-black ring-2 w-60" v-model="telephoneNumber">
-      <button class="hover:bg-orange-600 col-span-2 mx-auto h-min w-max px-2 bg-main rounded font-bold text-2xl mt-4" @click="registerUser">
+      <button class="hover:bg-orange-600 col-span-2 mx-auto h-min w-max px-2 bg-main rounded font-bold text-2xl mt-4" @click="customersUser">
         สมัครสมาชิก
       </button>
     </div>
@@ -40,9 +40,9 @@ export default defineComponent({
     const email = ref('')
     const telephoneNumber = ref('')
 
-    const registerUser = async (): Promise<void> => {
+    const customersUser = async (): Promise<void> => {
       try {
-        const response = await ky.post('http://localhost:4000/register', {
+        const response = await ky.post('http://localhost:4000/customers', {
           json: {
             username: username.value,
             password: password.value,
@@ -69,7 +69,7 @@ export default defineComponent({
       lastName,
       email,
       telephoneNumber,
-      registerUser
+      customersUser
     }
   }
 })

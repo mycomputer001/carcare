@@ -6,7 +6,7 @@ export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promi
   instance.post<{ Body: ReserveBody }>('/', async (request) => {
     try {
       await instance.pg.query(
-        'insert into reserve (reserve_brand, reserve_model, reserve_license, reserve_phone, reserve_service, reserve_date) values ($1, $2, $3, $4, $5, $6)',
+        'insert into reserves (reserve_brand, reserve_model, reserve_license, reserve_phone, reserve_service, reserve_date) values ($1, $2, $3, $4, $5, $6)',
         [request.body.brand, request.body.model, request.body.license, request.body.phone, request.body.service, request.body.date]
       )
     } catch (error) {
@@ -14,7 +14,7 @@ export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promi
     }
 
     return {
-      message: 'reserve successful'
+      message: 'reserves successful'
     }
   })
 }
