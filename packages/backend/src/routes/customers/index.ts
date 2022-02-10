@@ -1,4 +1,5 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify'
+import { nanoid } from 'nanoid'
 
 import { RegisterBody } from '@carcare/common'
 
@@ -17,8 +18,8 @@ export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promi
 
     try {
       await instance.pg.query(
-        'insert into customers (customer_username, customer_name, customer_surname, customer_phone_number, customer_email, customer_password) values ($1, $2, $3, $4, $5, $6)',
-        [request.body.username, request.body.firstName, request.body.lastName, request.body.telephoneNumber, request.body.email, request.body.password]
+        'insert into customers (customer_id, customer_username, customer_name, customer_surname, customer_phone_number, customer_email, customer_password) values ($1, $2, $3, $4, $5, $6, $7)',
+        [nanoid(), request.body.username, request.body.firstName, request.body.lastName, request.body.telephoneNumber, request.body.email, request.body.password]
       )
     } catch (error) {
       throw new Error(error as string)

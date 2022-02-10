@@ -32,7 +32,7 @@
           <option value="make color">
             เคลือบสี
           </option>
-          <option value="clening">
+          <option value="cleaning">
             ทำความสะอาด
           </option>
         </select>

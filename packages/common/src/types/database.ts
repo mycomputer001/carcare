@@ -1,5 +1,5 @@
 export interface customers {
-  customer_id: number
+  customer_id: string
   customer_username: string
   customer_password: string
   customer_name: string

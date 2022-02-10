@@ -1,7 +1,7 @@
 drop table customers, reserves, employees cascade;
 
 create table customers (
-  customer_id serial,
+  customer_id text not null unique,
   customer_username text not null unique,
   customer_password text not null,
   customer_name text not null,
@@ -19,6 +19,7 @@ create table reserves (
   reserve_phone_number text not null,
   reserve_service text not null,
   reserve_date timestamp with time zone,
+  reserve_now timestamp not null default now(),
   primary key (reserve_id)
 );
 
