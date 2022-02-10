@@ -71,4 +71,17 @@ export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promi
 
     return employees.rows
   })
+
+  instance.delete<{ Querystring: { employeeId: string } }>('/', async (request) => {
+    const { employeeId } = request.query
+
+    await instance.pg.query(
+      'delete from "employees" where employee_id = $1',
+      [employeeId]
+    )
+
+    return {
+      message: 'delete employee complete'
+    }
+  })
 }

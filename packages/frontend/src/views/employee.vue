@@ -23,13 +23,14 @@
         </div>
       </div>
       <div class="text-2xl flex flex-col items-center mt-4">
-        <div class="grid grid-cols-5 text-center border-2">
+        <div class="grid grid-cols-6 text-center border-2">
           <div>ชื่อ</div>
           <div>นามสกุล</div>
           <div>เบอร์โทรศัพท์</div>
           <div>วันเกิด</div>
           <div>เงินเดือน</div>
-          <template v-for="employee of employeesList" :key="employee.employee_id">
+          <div />
+          <template v-for="(employee,i) of employeesList" :key="employee.employee_id">
             <div class="">
               {{ employee.employee_name }}
             </div>
@@ -45,6 +46,9 @@
             <div class="">
               {{ employee.employee_salary }}
             </div>
+            <button @click="deleteEmployee(i)">
+              ลบ
+            </button>
           </template>
         </div>
       </div>
@@ -78,6 +82,23 @@ export default defineComponent({
     const salary = ref('')
     const address = ref('')
     const employeesList: Ref<Array<employees>> = ref([])
+
+    const deleteEmployee = async (index: number): Promise<void> => {
+      try {
+        await ky.delete('http://localhost:4000/employees', {
+          searchParams: {
+            employeeId: employeesList.value[index].employee_id
+          }
+        })
+
+        router.go(0)
+        alert('delete employee done')
+      } catch (error) {
+        // @ts-expect-error error is unknown
+        const json = await error.response.json()
+        alert(json.message)
+      }
+    }
 
     const employeeUser = async (): Promise<void> => {
       if (salary.value === '' || Number(salary.value) <= 0) {
@@ -133,7 +154,8 @@ export default defineComponent({
       salary,
       address,
       employeeUser,
-      employeesList
+      employeesList,
+      deleteEmployee
     }
   }
 })
