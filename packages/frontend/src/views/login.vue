@@ -6,9 +6,14 @@
       </div>
       <p>Username :</p><input type="Username" placeholder="Username" class="rounded ring-black ring-2 w-60" v-model="username">
       <p>Password :</p><input type="password" placeholder="Password" class="rounded ring-black ring-2 w-60" v-model="password">
-      <button class="col-span-2 mx-auto h-min w-max px-2 bg-main rounded font-bold text-2xl mt-4 hover:bg-orange-600" @click="loginUser">
-        เข้าสู่ระบบ
-      </button>
+      <div class="flex flex-col col-span-2">
+        <button class=" mx-auto h-min w-max px-2 bg-main rounded font-bold text-2xl mt-4 hover:bg-orange-600" @click="loginUser">
+          เข้าสู่ระบบ
+        </button>
+        <router-link to="/register" class=" mx-auto h-min w-max px-2 bg-main rounded font-bold text-2xl mt-4 hover:bg-orange-600">
+          สมัครสมาชิก
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
