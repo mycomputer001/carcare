@@ -3,6 +3,7 @@ import { FastifyInstance, FastifyPluginOptions } from 'fastify'
 import registerRoute from './customers'
 import employeeRoute from './employees'
 import loginRoute from './login'
+import profileRoute from './profile'
 import reserveRoute from './reserves'
 
 export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promise<void> => {
@@ -16,4 +17,5 @@ export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promi
   void instance.register(loginRoute, { prefix: '/login' })
   void instance.register(reserveRoute, { prefix: '/reserves' })
   void instance.register(employeeRoute, { prefix: '/employees' })
+  void instance.register(profileRoute, { prefix: '/profile' })
 }

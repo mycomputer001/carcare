@@ -91,7 +91,6 @@ export default defineComponent({
           surname: surname.value,
           phoneNumber: phoneNumber.value,
           birthdate: birthdate.value,
-          // ถ้าข้างหน้าเป็น 0, '', {}, [], null, undefined, NaN เอาข้างหลัง
           salary: Number(salary.value),
           address: address.value
         }
