@@ -7,6 +7,18 @@
     <div class="flex justify-center">
       <chart />
     </div>
+    <div class="flex justify-center text-3xl mt-5">
+      สถิติการเคลือบสีรถต่อเดือน
+    </div>
+    <div class="flex justify-center">
+      <chart />
+    </div>
+    <div class="flex justify-center text-3xl mt-5">
+      สถิติการทำความสะอาดรถต่อเดือน
+    </div>
+    <div class="flex justify-center">
+      <chart />
+    </div>
   </div>
 </template>
 
@@ -17,7 +29,7 @@ import Chart from '../components/chart.vue'
 import Sidebarceo from '../components/sidebarceo.vue'
 
 export default defineComponent({
-  name: 'admin',
+  name: 'chartview',
   components: { Sidebarceo, Chart }
 })
 </script>

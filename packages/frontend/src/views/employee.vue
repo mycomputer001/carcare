@@ -14,9 +14,9 @@
           <input type="text" placeholder="เงินเดือน" class="ring-black ring-2 w-28 rounded ml-3" v-model="salary">
         </div>
         <div class="flex justify-center">
-          <textarea placeholder="ที่อยู่" class="ring-black ring-2 w-56 h-32 rounded ml-3 col-span-5 mt-5 " v-model="address" />
+          <textarea placeholder="ที่อยู่" class="ring-black ring-2 w-56 h-32 rounded ml-3 mt-5 " v-model="address" />
         </div>
-        <div class="col-span-5 flex justify-center mt-5">
+        <div class="flex justify-center mt-5">
           <button class="ring-black ring-2 w-28 rounded bg-white shadow-black shadow-inner hover:bg-side" @click="employeeUser">
             เพิ่มพนักงาน
           </button>
@@ -46,7 +46,7 @@
             <div class="">
               {{ employee.employee_salary }}
             </div>
-            <button @click="deleteEmployee(i)">
+            <button @click="deleteEmployee(i)" class="underline">
               ลบ
             </button>
           </template>
@@ -137,7 +137,7 @@ export default defineComponent({
           employee_name: employee.employee_name,
           employee_surname: employee.employee_surname,
           employee_phone_number: employee.employee_phone_number,
-          employee_birthdate: dayjs(employee.employee_birthdate).locale('th').format('D MMMM YYYY'),
+          employee_birthdate: dayjs(employee.employee_birthdate).locale('th').format('D-MM-YYYY'),
           employee_salary: employee.employee_salary,
           employee_address: employee.employee_address
         }

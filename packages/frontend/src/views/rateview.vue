@@ -9,7 +9,7 @@ import { defineComponent } from 'vue'
 import Sidebarceo from '../components/sidebarceo.vue'
 
 export default defineComponent({
-  name: 'admin',
+  name: 'rateview',
   components: { Sidebarceo }
 })
 </script>
