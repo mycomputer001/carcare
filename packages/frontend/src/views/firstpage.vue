@@ -12,10 +12,10 @@
           จักรยานยนต์
         </div>
         <router-link to="/buypage" class="hover:bg-orange-600 bg-main w-max px-10 mx-auto font-mono rounded-full">
-          ราคา 300
+          เลือก
         </router-link>
         <router-link to="/buypage" class="hover:bg-orange-600 bg-main w-max px-10 mx-auto font-mono rounded-full">
-          ราคา 200
+          เลือก
         </router-link>
       </div>
     </div>

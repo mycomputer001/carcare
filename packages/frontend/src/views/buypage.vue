@@ -27,13 +27,13 @@
         </div>
         <select id="cars" class="ring-black ring-2 w-1/2 rounded" v-model="service">
           <option value="car wash">
-            ล้างรถ
+            ล้างรถ 300 บาท.
           </option>
           <option value="make color">
-            เคลือบสี
+            เคลือบสี 400 บาท.
           </option>
           <option value="cleaning">
-            ทำความสะอาด
+            ทำความสะอาด 200 บาท.
           </option>
         </select>
         <div class="">
