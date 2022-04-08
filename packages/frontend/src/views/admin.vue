@@ -76,15 +76,6 @@ export default defineComponent({
   setup () {
     const router = useRouter()
 
-    const name = ref('')
-    const surname = ref('')
-    const phoneNumber = ref('')
-    const birthdate = ref('')
-    const salary = ref('')
-    const address = ref('')
-    const price = ref('')
-    const done = ref('')
-
     const reservesList: Ref<Array<reserves>> = ref([])
 
     onMounted(async () => {
@@ -125,14 +116,6 @@ export default defineComponent({
     }
 
     return {
-      name,
-      surname,
-      phoneNumber,
-      birthdate,
-      salary,
-      address,
-      price,
-      done,
       reservesList,
       changeStatus
     }

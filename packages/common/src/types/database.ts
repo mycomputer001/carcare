@@ -29,3 +29,8 @@ export interface employees {
   employee_salary: number
   employee_address: string
 }
+
+export interface rates {
+  rate_id: number
+  rate_points: string
+}

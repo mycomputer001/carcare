@@ -7,7 +7,7 @@
     <template v-for="(reserve,i) of reservesList" :key="reserve.reserve_id">
       <div class="ring-black ring-2 mx-10 mt-5 rounded grid grid-cols-4 p-2">
         <div class="text-2xl font-bold">
-          {{ reserve.reserve_license }}}
+          {{ reserve.reserve_license }}
         </div>
         <div class="text-2xl font-bold">
           สมาชิก
@@ -35,7 +35,7 @@
           <router-link to="/status" class="text-right bg-main px-2 text-2xl font-bold rounded-lg hover:bg-orange-600" @click="deleteEmployee(i)">
             ยกเลิก
           </router-link>
-          <router-link to="/rate" class="text-right bg-main px-2 text-2xl font-bold rounded-lg hover:bg-orange-600">
+          <router-link to="/rate" class="text-right bg-main px-2 text-2xl font-bold rounded-lg hover:bg-orange-600" @click="deleteEmployee2(i)">
             เสร็จสิ้น
           </router-link>
         </div>
@@ -89,6 +89,23 @@ export default defineComponent({
       }
     }
 
+    const deleteEmployee2 = async (index: number): Promise<void> => {
+      try {
+        await ky.delete('http://localhost:4000/reserves', {
+          searchParams: {
+            reserveId: reservesList.value[index].reserve_id
+          }
+        })
+
+        router.push('/rate')
+        alert('done')
+      } catch (error) {
+        // @ts-expect-error error is unknown
+        const json = await error.response.json()
+        alert(json.message)
+      }
+    }
+
     onMounted(async () => {
       const reserves = await ky.get('http://localhost:4000/reserves').json<Array<reserves>>()
       reservesList.value = [...reservesList.value, ...reserves].map(reserve => {
@@ -117,6 +134,7 @@ export default defineComponent({
       address,
       price,
       done,
+      deleteEmployee2,
       deleteEmployee,
       reservesList
     }

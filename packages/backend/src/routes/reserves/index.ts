@@ -47,7 +47,7 @@ export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promi
 
         if (done == null || done === '') {
           void reply.code(400)
-          throw new Error('body should have required property \'price\'')
+          throw new Error('body should have required property \'status\'')
         }
       }
     },

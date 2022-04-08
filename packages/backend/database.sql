@@ -1,4 +1,4 @@
-drop table customers, reserves, employees cascade;
+drop table customers, reserves, employees, rates cascade;
 drop type if exists t_cleaning_status;
 
 create table customers (
@@ -39,4 +39,10 @@ create table employees (
   employee_salary integer not null,
   employee_address text not null,
   primary key (employee_id)
+);
+
+create table rates (
+  rate_id serial,
+  rate_points text not null,
+  primary key (rate_id)
 );
