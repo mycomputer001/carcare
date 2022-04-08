@@ -2,7 +2,7 @@
   <sidebarceo />
   <div class="min-h-screen w-full">
     <div class="text-center text-4xl">
-      คะแนนความพึ่งพอใจ
+      คะแนนความพึงพอใจ
     </div>
     <div class="text-lg flex flex-col items-center mt-4 mx-20">
       <div class="grid grid-cols-2 text-center border-2 min-w-min">
