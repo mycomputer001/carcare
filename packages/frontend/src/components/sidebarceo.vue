@@ -34,7 +34,7 @@
         </router-link>
         <router-link to="/rateview">
           <div class="text-white hover:text-orange-400">
-            รีวิวพนักงาน
+            คะแนนความพึ่งพอใจ
           </div>
         </router-link>
         <router-link to="/login">

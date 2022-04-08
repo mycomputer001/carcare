@@ -33,7 +33,7 @@
             เคลือบสี +100 บาท
           </option>
           <option value="cleaning">
-            ทำความสะอาด +50 บาท.
+            ทำความสะอาด +50 บาท
           </option>
         </select>
         <div class="">
