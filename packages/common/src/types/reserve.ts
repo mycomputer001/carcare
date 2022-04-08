@@ -11,4 +11,11 @@ export interface ReserveBody {
   phone: string
   service: string
   date: string
+  price: string
+  done: string
+}
+
+export interface PacthStatusBody {
+  id: string
+  done: string
 }

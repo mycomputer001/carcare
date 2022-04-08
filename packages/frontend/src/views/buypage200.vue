@@ -27,13 +27,13 @@
         </div>
         <select id="cars" class="ring-black ring-2 w-1/2 rounded" v-model="service">
           <option value="car wash">
-            ล้างรถ 300 บาท.
+            ล้างรถ
           </option>
           <option value="make color">
-            เคลือบสี 400 บาท.
+            เคลือบสี +100 บาท
           </option>
           <option value="cleaning">
-            ทำความสะอาด 200 บาท.
+            ทำความสะอาด +50 บาท.
           </option>
         </select>
         <div class="">
@@ -61,7 +61,7 @@ import { useRouter } from 'vue-router'
 import Sidebar from '../components/sidebar.vue'
 
 export default defineComponent({
-  name: 'buypage',
+  name: 'buypage200',
   components: { Sidebar },
   setup () {
     const router = useRouter()
@@ -70,8 +70,24 @@ export default defineComponent({
     const model = ref('')
     const license = ref('')
     const phone = ref('')
-    const service = ref('')
+    const service = ref<'car wash'|'make color'|'cleaning'>('car wash')
     const date = ref('')
+    const price = ref('')
+    const done = ref('waiting')
+    const calculateprice = () => {
+      if (service.value === 'car wash') {
+        return '200'
+      }
+
+      if (service.value === 'make color') {
+        return '300'
+      }
+
+      if (service.value === 'cleaning') {
+        return '250'
+      }
+      return '300'
+    }
 
     const reserveUser = async (): Promise<void> => {
       try {
@@ -82,12 +98,14 @@ export default defineComponent({
             license: license.value,
             phone: phone.value,
             service: service.value,
-            date: date.value
+            date: date.value,
+            done: done.value,
+            price: calculateprice()
           }
         }).json()
 
         console.log(response)
-        router.push('/bill')
+        router.push('/status')
       } catch (error) {
         // @ts-expect-error error is unknown
         const json = await error.response.json()
@@ -102,6 +120,8 @@ export default defineComponent({
       phone,
       service,
       date,
+      price,
+      done,
       reserveUser
     }
   }

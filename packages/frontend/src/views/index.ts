@@ -1,6 +1,7 @@
 import Admin from './admin.vue'
 import Bill from './bill.vue'
-import Buypage from './buypage.vue'
+import Buypage200 from './buypage200.vue'
+import Buypage300 from './buypage300.vue'
 import Chartview from './chartview.vue'
 import Contact from './contact.vue'
 import Employee from './employee.vue'
@@ -16,7 +17,8 @@ import Status from './status.vue'
 export {
   Admin,
   Bill,
-  Buypage,
+  Buypage200,
+  Buypage300,
   Chartview,
   Contact,
   Employee,

@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyPluginOptions } from 'fastify'
 import { nanoid } from 'nanoid'
 
-import { RegisterBody } from '@carcare/common'
+import { customers, RegisterBody } from '@carcare/common'
 
 export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promise<void> => {
   instance.post<{ Body: RegisterBody }>('/', async (request) => {
@@ -28,5 +28,15 @@ export default async (instance: FastifyInstance, _: FastifyPluginOptions): Promi
     return {
       message: 'customers route'
     }
+  })
+
+  instance.get('/', async () => {
+    const customers = await instance.pg.query<customers>(
+      'select * from customers'
+    ).catch(error => {
+      throw new Error(error as string)
+    })
+
+    return customers.rows
   })
 }

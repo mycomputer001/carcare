@@ -1,4 +1,5 @@
 drop table customers, reserves, employees cascade;
+drop type if exists t_cleaning_status;
 
 create table customers (
   customer_id text not null unique,
@@ -11,6 +12,10 @@ create table customers (
   primary key (customer_id)
 );
 
+create type t_cleaning_status as enum (
+  'waiting', 'cleaning', 'done'
+);
+
 create table reserves (
   reserve_id serial,
   reserve_brand text not null,
@@ -18,7 +23,9 @@ create table reserves (
   reserve_license text not null,
   reserve_phone_number text not null,
   reserve_service text not null,
-  reserve_date timestamp with time zone,
+  reserve_price text not null,
+  reserve_done t_cleaning_status not null default 'waiting',
+  reserve_date timestamp not null default now(),
   reserve_now timestamp not null default now(),
   primary key (reserve_id)
 );

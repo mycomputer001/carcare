@@ -11,11 +11,11 @@
         <div class="">
           จักรยานยนต์
         </div>
-        <router-link to="/buypage" class="hover:bg-orange-600 bg-main w-max px-10 mx-auto font-mono rounded-full">
-          เลือก
+        <router-link to="/buypage300" class="hover:bg-orange-600 bg-main w-max px-10 mx-auto font-mono rounded-full">
+          300 บาท.
         </router-link>
-        <router-link to="/buypage" class="hover:bg-orange-600 bg-main w-max px-10 mx-auto font-mono rounded-full">
-          เลือก
+        <router-link to="/buypage200" class="hover:bg-orange-600 bg-main w-max px-10 mx-auto font-mono rounded-full">
+          200 บาท.
         </router-link>
       </div>
     </div>

@@ -9,9 +9,14 @@ const routes: Array<RouteRecordRaw> = [
     component: Page.Home
   },
   {
-    path: '/buypage',
-    name: 'buypage',
-    component: Page.Buypage
+    path: '/buypage200',
+    name: 'buypage200',
+    component: Page.Buypage200
+  },
+  {
+    path: '/buypage300',
+    name: 'buypage300',
+    component: Page.Buypage300
   },
   {
     path: '/register',

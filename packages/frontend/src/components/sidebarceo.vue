@@ -3,9 +3,6 @@
     <div class="h-[70%] flex flex-col justify-start gap-20 items-center mt-4">
       <div>
         <v-mdi name="mdi-account-circle" size="125" fill="#c3c3c3" />
-        <div class="text-white">
-          Aekkepang Jantola
-        </div>
       </div>
       <div class="menu-grid">
         <router-link to="/admin">

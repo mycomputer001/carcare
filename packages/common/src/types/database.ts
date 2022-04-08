@@ -15,6 +15,8 @@ export interface reserves {
   reserve_license: string
   reserve_phone_number: string
   reserve_service: string
+  reserve_price: string
+  reserve_done: string
   reserve_date: string | null
 }
 
